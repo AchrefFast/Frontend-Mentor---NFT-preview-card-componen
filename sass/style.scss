@@ -1,0 +1,147 @@
+@import 'variable';
+@import 'mixins';
+
+*, *::after, *:before{
+    box-sizing: border-box;
+}
+
+body{
+
+    margin: 0;
+    font-family: 'Outfit', sans-serif;
+}
+
+h1, h2, p {
+    margin: 0;
+}
+
+
+.main{ 
+    display: grid;
+    place-items: center;
+    width: 100%;
+    min-height: 100vh;
+    padding: 10% 5%;
+    background: color(main_bg);
+}
+
+
+.card{
+    display: grid;
+    row-gap: 1em;
+    padding: 1.5em;
+    max-width: 600px;
+    width: 100%;
+    margin: 0 auto;
+    background: color(card_bg);
+    border-radius: 25px;
+    max-width: 375px;
+
+    .card__image{
+        width: 100%;
+        padding: 0;
+        margin: 0;
+        border-radius: 13px;
+        background-color: cyan;
+        
+        a{   
+            margin: 0;
+            padding: 0;
+
+            img{
+                border-radius: 10px;
+                display: block;
+                padding: 0;
+                margin: 0;
+                max-width: 100%;
+                height: auto;
+                
+            }
+        }
+
+        img:hover{
+            opacity: .7;
+        
+        }
+    }
+
+    .card__title{
+        a{
+            text-decoration: none;
+            color: white;
+        }
+        a:hover{
+            color: color(cyan);
+        }
+    }
+
+    .card__text{
+        font-size: clamp(1rem, 4vw, $f-size-p);
+        font-weight: 300;
+        color: color(soft-blue);
+    }
+
+    .card__details{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .card__price{
+            color: color(cyan);
+            font-weight: 600;
+        }
+
+        .card__time{
+            color: color(soft-blue);
+        }
+    }
+
+    .card__created-by{
+        display: grid;
+        grid-template-columns: 1fr 6fr;
+        align-items: center;
+        grid-auto-flow: row;
+        column-gap: .7em;
+        margin-top: 1em;
+        position: relative;
+        font-weight: 300;
+        font-size: $f-size-creator;
+
+        &::after{
+            content: '';
+            height: 1px;
+            position: absolute;
+            top: -15px;
+            left: 0;
+            right: 0; 
+            background-color: color(line-clr);
+        }
+
+    }
+
+    .card__avatar{
+        width: 100%;
+        border-radius: 50%;
+        border: 1px solid white;
+    }
+
+    .card__created-by__content{
+        color: color(soft-blue);
+        .card__created-by__name{
+            color: white;
+            text-decoration: none;
+        }
+        .card__created-by__name:hover{
+            color: color(cyan);
+        }
+    }
+}
+
+.fab, .fas{
+    margin-right: 5px;
+}
+
+.fas{
+    font-size: .8rem;
+}
+

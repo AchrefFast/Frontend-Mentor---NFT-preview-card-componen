@@ -61,6 +61,10 @@ h1, h2, p {
   opacity: .7;
 }
 
+.card .card__title {
+  font-size: 25px;
+}
+
 .card .card__title a {
   text-decoration: none;
   color: white;
